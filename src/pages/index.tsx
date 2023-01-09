@@ -1,12 +1,19 @@
-import type { NextPage, GetServerSideProps } from "next"
+import type { NextPage, InferGetStaticPropsType } from "next"
+import { Client } from "libs/client"
 
-const Page: NextPage = () => {
-  return null
+type Props = InferGetStaticPropsType<typeof getStaticProps>
+
+const Page: NextPage<Props> = ({ blogs }) => {
+  return <p className="whitespace-pre">{JSON.stringify(blogs, null, 4)}</p>
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps = async () => {
+  const blogs = await Client.getList({ endpoint: "blogs" })
+
   return {
-    props: {},
+    props: {
+      blogs,
+    },
   }
 }
 
