@@ -3,16 +3,16 @@ import { Client } from "libs/client"
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
-const Page: NextPage<Props> = ({ blogs }) => {
-  return <p className="whitespace-pre">{JSON.stringify(blogs, null, 4)}</p>
+const Page: NextPage<Props> = ({ contents }) => {
+  return <p className="whitespace-pre">{JSON.stringify(contents, null, 4)}</p>
 }
 
 export const getStaticProps = async () => {
-  const blogs = await Client.getList({ endpoint: "blogs" })
+  const works = await Client.getList({ endpoint: "works" })
 
   return {
     props: {
-      blogs,
+      contents: works.contents,
     },
   }
 }
