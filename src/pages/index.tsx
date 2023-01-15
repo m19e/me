@@ -1,6 +1,15 @@
 import type { NextPage, InferGetStaticPropsType } from "next"
 import { Client } from "libs/client"
 
+type WorkContent = {
+  title: string
+  description: string
+  sections: {
+    title: string[]
+    text: string
+  }[]
+}
+
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 const Page: NextPage<Props> = ({ contents }) => {
@@ -8,7 +17,7 @@ const Page: NextPage<Props> = ({ contents }) => {
 }
 
 export const getStaticProps = async () => {
-  const works = await Client.getList({ endpoint: "works" })
+  const works = await Client.getList<WorkContent>({ endpoint: "works" })
 
   return {
     props: {
