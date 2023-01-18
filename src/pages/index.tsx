@@ -1,18 +1,9 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
 import type { NextPage, InferGetStaticPropsType } from "next"
 import Image from "next/image"
+
+import type { SectionContent, WorkContent } from "types"
 import { Client } from "utils"
-
-type SectionContent = {
-  title: string[]
-  text: string
-}
-
-type WorkContent = {
-  title: string
-  description: string
-  sections: SectionContent[]
-}
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
