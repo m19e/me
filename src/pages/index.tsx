@@ -50,8 +50,8 @@ interface SectionsProps {
 
 const Sections = ({ contents }: SectionsProps) => {
   const sections = contents.map(({ title, text }) => (
-    <div key={title[0]}>
-      <h3 className="text-2xl">{title[0]}</h3>
+    <div key={title[0]} className="space-y-2">
+      <h3 className="text-base tracking-wide md:text-lg">{title[0]}</h3>
       <p className="text-sm whitespace-pre-wrap md:text-base">{text}</p>
     </div>
   ))
