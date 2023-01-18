@@ -1,1 +1,1 @@
-export { useAccordion } from "@/hooks/useAccordion"
+export { useAccordion } from "./useAccordion"
