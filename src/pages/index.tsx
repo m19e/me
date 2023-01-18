@@ -1,7 +1,7 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
 import type { NextPage, InferGetStaticPropsType } from "next"
 import Image from "next/image"
-import { Client } from "@/utils/client"
+import { Client } from "utils"
 
 type SectionContent = {
   title: string[]
