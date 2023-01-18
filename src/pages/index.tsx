@@ -1,7 +1,7 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
 import type { NextPage, InferGetStaticPropsType } from "next"
 import Image from "next/image"
-import { Client } from "libs/client"
+import { Client } from "@/utils/client"
 
 type SectionContent = {
   title: string[]
@@ -17,9 +17,7 @@ type WorkContent = {
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 const Page: NextPage<Props> = ({ contents }) => {
-  const works = contents.map((content) => (
-    <Work key={content.title} content={content} />
-  ))
+  const works = contents.map((c) => <Work key={c.title} content={c} />)
 
   return (
     <div className="flex flex-col gap-8 items-center min-h-screen">{works}</div>
