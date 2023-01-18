@@ -2,8 +2,10 @@
 import type { NextPage, InferGetStaticPropsType } from "next"
 import Image from "next/image"
 
-import type { SectionContent, WorkContent } from "types"
+import type { WorkContent } from "types"
 import { Client } from "utils"
+
+import { Sections } from "components/molecules/Sections"
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -70,21 +72,6 @@ const Work = ({ content }: { content: WorkContent }) => {
       </div>
     </>
   )
-}
-
-interface SectionsProps {
-  contents: SectionContent[]
-}
-
-const Sections = ({ contents }: SectionsProps) => {
-  const sections = contents.map(({ title, text }) => (
-    <div key={title[0]} className="space-y-2">
-      <h3 className="text-base tracking-wide md:text-lg">{title[0]}</h3>
-      <p className="text-sm whitespace-pre-wrap md:text-base">{text}</p>
-    </div>
-  ))
-
-  return <div className="space-y-4">{sections}</div>
 }
 
 export const getStaticProps = async () => {
