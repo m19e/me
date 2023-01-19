@@ -1,1 +1,1 @@
-export {}
+export { useAccordion } from "./useAccordion"
