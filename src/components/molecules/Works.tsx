@@ -1,7 +1,6 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
 import { motion, useAnimationControls } from "framer-motion"
 import Image from "next/image"
-import { useState } from "react"
 
 import type { WorkContent } from "types"
 import { Sections } from "components/molecules/Sections"
@@ -14,22 +13,22 @@ export const Works = ({ contents }: Props) => {
   const works = contents.map((c) => <Work key={c.title} content={c} />)
 
   return (
-    <div className="flex flex-col gap-8 items-center min-h-screen">{works}</div>
+    <div className="flex flex-col gap-4 items-center min-h-screen">{works}</div>
   )
 }
 
 const Work = ({ content }: { content: WorkContent }) => {
   const { title, sections } = content
-  const [isOpen, setIsOpen] = useState(false)
   const controls = useAnimationControls()
 
-  const toggleOpen = () => {
-    setIsOpen((prev) => {
-      controls.start({
-        height: prev ? "0.25rem" : "100%",
-      })
-
-      return !prev
+  const openDetail = () => {
+    controls.start({
+      height: "100%",
+    })
+  }
+  const closeDetail = () => {
+    controls.start({
+      height: "4px",
     })
   }
 
@@ -44,7 +43,7 @@ const Work = ({ content }: { content: WorkContent }) => {
           />
           <div
             className="absolute inset-0 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300"
-            onClick={toggleOpen}
+            onClick={openDetail}
           >
             <div className="flex items-center px-10 h-full">
               <p className="font-sans font-thin text-white">{title}</p>
@@ -54,16 +53,16 @@ const Work = ({ content }: { content: WorkContent }) => {
       </div>
 
       <motion.div
-        className={`overflow-hidden pt-1`}
-        initial={{ height: "0.25rem" }}
+        className="overflow-hidden pt-1 w-full"
+        initial={{ height: "4px" }}
         animate={controls}
         transition={{ duration: 1 }}
       >
-        <div className="flex justify-center px-8 pb-12 w-full bg-zinc-50 md:px-auto">
+        <div className="flex justify-center px-8 pb-8 mb-8 w-full bg-zinc-50 md:px-auto">
           <div className="space-y-8 w-full md:w-[900px]">
             <div className="">
               <div className="flex justify-end">
-                <button onClick={toggleOpen}>
+                <button onClick={closeDetail}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
