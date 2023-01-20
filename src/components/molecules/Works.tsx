@@ -1,4 +1,5 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
+import { motion, useAnimationControls } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -20,6 +21,17 @@ export const Works = ({ contents }: Props) => {
 const Work = ({ content }: { content: WorkContent }) => {
   const { title, sections } = content
   const [isOpen, setIsOpen] = useState(false)
+  const controls = useAnimationControls()
+
+  const toggleOpen = () => {
+    setIsOpen((prev) => {
+      controls.start({
+        height: prev ? "0.25rem" : "100%",
+      })
+
+      return !prev
+    })
+  }
 
   return (
     <>
@@ -32,7 +44,7 @@ const Work = ({ content }: { content: WorkContent }) => {
           />
           <div
             className="absolute inset-0 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300"
-            onClick={() => setIsOpen(true)}
+            onClick={toggleOpen}
           >
             <div className="flex items-center px-10 h-full">
               <p className="font-sans font-thin text-white">{title}</p>
@@ -41,45 +53,48 @@ const Work = ({ content }: { content: WorkContent }) => {
         </div>
       </div>
 
-      <div
-        className={`flex justify-center px-8 pb-12 w-full bg-zinc-50 md:px-auto ${
-          isOpen ? "" : "hidden"
-        }`}
+      <motion.div
+        className={`overflow-hidden pt-1`}
+        initial={{ height: "0.25rem" }}
+        animate={controls}
+        transition={{ duration: 1 }}
       >
-        <div className="space-y-8 w-full md:w-[900px]">
-          <div className="">
-            <div className="flex justify-end">
-              <button onClick={() => setIsOpen(false)}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={0.2}
-                  stroke="currentColor"
-                  className="w-20 h-20"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+        <div className="flex justify-center px-8 pb-12 w-full bg-zinc-50 md:px-auto">
+          <div className="space-y-8 w-full md:w-[900px]">
+            <div className="">
+              <div className="flex justify-end">
+                <button onClick={toggleOpen}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={0.2}
+                    stroke="currentColor"
+                    className="w-20 h-20"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <h2 className="text-3xl italic font-thin">{title}</h2>
             </div>
-            <h2 className="text-3xl italic font-thin">{title}</h2>
+            <div className="relative w-full">
+              <Image
+                src="https://placehold.jp/900x420.png"
+                alt="mock"
+                width={900}
+                height={420}
+              />
+            </div>
+            {/* <p>{description}</p> */}
+            <Sections contents={sections} />
           </div>
-          <div className="relative w-full">
-            <Image
-              src="https://placehold.jp/900x420.png"
-              alt="mock"
-              width={900}
-              height={420}
-            />
-          </div>
-          {/* <p>{description}</p> */}
-          <Sections contents={sections} />
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }
