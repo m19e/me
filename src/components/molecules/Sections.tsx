@@ -6,9 +6,9 @@ interface Props {
 
 export const Sections = ({ contents }: Props) => {
   const sections = contents.map(({ title, text }) => (
-    <div key={title[0]} className="space-y-2">
-      <h3 className="text-base tracking-wide md:text-lg">{title[0]}</h3>
-      <p className="text-sm whitespace-pre-wrap md:text-base">{text}</p>
+    <div key={title[0]} className="space-y-2 font-latego">
+      <h3 className="text-sm md:text-base tracking-wid">{title[0]}</h3>
+      <p className="text-xs whitespace-pre-wrap md:text-sm">{text}</p>
     </div>
   ))
 
