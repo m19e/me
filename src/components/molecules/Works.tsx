@@ -17,7 +17,24 @@ export const Works = ({ contents }: Props) => {
 
   return (
     <div className="flex flex-col gap-4 items-center py-8 min-h-screen">
+      <Hero />
       {works}
+    </div>
+  )
+}
+
+const Hero = () => {
+  return (
+    <div className="flex justify-center px-8 w-full md:px-auto">
+      <div className="aspect-video flex flex-col justify-center w-full md:w-[900px]">
+        <h1 className="space-y-4">
+          <span className="text-6xl font-thin font-latego">m19e.me</span>
+          <div className="flex flex-col text-xl italic font-thin">
+            <span>PORTFOLIO OF m19e</span>
+            <span>FRONTEND DEVELOPER</span>
+          </div>
+        </h1>
+      </div>
     </div>
   )
 }
