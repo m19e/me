@@ -41,7 +41,7 @@ const Hero = () => {
 }
 
 const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
-  const { title, sections } = content
+  const { title, description, sections } = content
   const controls = useAnimationControls()
 
   const openDetail = () => {
@@ -121,7 +121,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
                 height={420}
               />
             </div>
-            {/* <p>{description}</p> */}
+            <p className="text-sm md:text-base font-latego">{description}</p>
             <Sections contents={sections} />
           </div>
         </div>
