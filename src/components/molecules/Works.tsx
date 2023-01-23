@@ -30,7 +30,7 @@ const Hero = () => {
       <div className="aspect-video flex flex-col justify-center w-full md:w-[900px]">
         <h1 className="space-y-4">
           <span className="text-6xl font-thin font-latego">m19e.me</span>
-          <div className="flex flex-col text-xl italic font-thin">
+          <div className="flex flex-col px-1 text-xl italic font-thin leading-6">
             <span>PORTFOLIO OF m19e</span>
             <span>FRONTEND DEVELOPER</span>
           </div>
