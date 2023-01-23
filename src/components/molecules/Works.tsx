@@ -16,7 +16,7 @@ export const Works = ({ contents }: Props) => {
   ))
 
   return (
-    <div className="flex flex-col gap-4 items-center py-8 min-h-screen">
+    <div className="flex flex-col gap-4 items-center min-h-screen">
       <Hero />
       {works}
       <Footer />
