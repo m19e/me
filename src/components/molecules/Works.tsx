@@ -121,7 +121,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
                 height={420}
               />
             </div>
-            <p className="text-sm md:text-base font-latego">{description}</p>
+            <h3 className="text-base md:text-lg font-latego">{description}</h3>
             <Sections contents={sections} />
           </div>
         </div>
