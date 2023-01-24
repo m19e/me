@@ -4,6 +4,7 @@ export type SectionContent = {
 }
 
 export type WorkContent = {
+  id: string
   title: string
   description: string
   sections: SectionContent[]
