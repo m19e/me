@@ -41,7 +41,7 @@ const Hero = () => {
 }
 
 const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
-  const { title, description, sections } = content
+  const { title, description, sections, links } = content
   const controls = useAnimationControls()
 
   const openDetail = () => {
@@ -122,6 +122,9 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
             </div>
             <h3 className="text-base md:text-lg font-latego">{description}</h3>
             <Sections contents={sections} />
+            <p className="whitespace-pre-wrap">
+              {JSON.stringify(links, null, 4)}
+            </p>
           </div>
         </div>
       </motion.div>
