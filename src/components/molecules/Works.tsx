@@ -67,7 +67,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
             src="https://placehold.jp/900x420.png"
             alt="mock"
           />
-          <Scroll to={`detail-${title}`} duration={last ? 1000 : 500} smooth>
+          <Scroll to={detailID} duration={last ? 1000 : 500} smooth>
             <div
               id={summaryID}
               className="absolute inset-0 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300"
