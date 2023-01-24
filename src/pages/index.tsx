@@ -1,7 +1,7 @@
 import type { NextPage, InferGetStaticPropsType } from "next"
 
-import type { WorkContent } from "types"
 import { Client } from "utils"
+import type { WorkContent } from "types/cms"
 import { Works } from "components/molecules/Works"
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>

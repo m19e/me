@@ -3,7 +3,7 @@ import { motion, useAnimationControls } from "framer-motion"
 import Image from "next/image"
 import { Link as Scroll } from "react-scroll"
 
-import type { WorkContent } from "types"
+import type { WorkContent } from "types/cms"
 import { Icon } from "components/atoms/Icon"
 import { Sections } from "components/molecules/Sections"
 
