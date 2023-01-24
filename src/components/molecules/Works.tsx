@@ -51,7 +51,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
   }
   const closeDetail = () => {
     controls.start({
-      height: "4px",
+      height: "0px",
     })
   }
 
@@ -83,8 +83,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
 
       <motion.div
         id={detailID}
-        className="overflow-hidden pt-1 w-full"
-        initial={{ height: "4px" }}
+        className="overflow-hidden w-full h-0"
         animate={controls}
         transition={{ duration: 1 }}
       >
