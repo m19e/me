@@ -1,4 +1,4 @@
-import type { IconType } from "types/cms"
+import type { IconType as CMSIcon } from "types/cms"
 
 const Github = () => (
   <svg
@@ -61,7 +61,9 @@ const X = () => (
   </svg>
 )
 
-const icons: { [type in IconType | "x"]: JSX.Element } = {
+type IconType = CMSIcon | "x"
+
+const icons: { [type in IconType]: JSX.Element } = {
   github: <Github />,
   link: <Link />,
   download: <Download />,
