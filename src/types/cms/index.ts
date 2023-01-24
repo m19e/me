@@ -1,5 +1,5 @@
 export type SectionContent = {
-  title: string[]
+  title: [string]
   text: string
 }
 
