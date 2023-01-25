@@ -3,7 +3,7 @@ import { motion, useAnimationControls } from "framer-motion"
 import Image from "next/image"
 import { Link as Scroll } from "react-scroll"
 
-import type { WorkContent } from "types/cms"
+import type { WorkContent, LinkContent } from "types/cms"
 import { Icon } from "components/atoms/Icon"
 import { Sections } from "components/molecules/Sections"
 
@@ -108,28 +108,32 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
                 height={420}
               />
             </div>
-            <div className="flex flex-wrap">
-              <div className="flex-1">
-                <h3 className="text-base md:text-lg font-latego">
-                  {description}
-                </h3>
-              </div>
-              <div className="flex gap-2 px-2">
-                <a href="" className="w-6 h-6">
-                  <Icon type="github" />
-                </a>
-                <a href="" className="w-6 h-6">
-                  <Icon type="link" />
-                </a>
-              </div>
+            <div className="flex flex-col sm:flex-row">
+              <h3 className="flex-1 text-base whitespace-nowrap md:text-lg font-latego">
+                {description}
+              </h3>
+              <Links links={links} />
             </div>
-
             <Sections contents={sections} />
           </div>
         </div>
       </motion.div>
     </>
   )
+}
+
+const Links = ({ links }: { links: LinkContent[] }) => {
+  const icons = links.map(({ icon, href }) => (
+    <a
+      key={href}
+      href={href}
+      className="w-6 h-6 hover:text-zinc-500 transition-colors"
+    >
+      <Icon type={icon[0]} />
+    </a>
+  ))
+
+  return <div className="flex gap-2 justify-end px-2">{icons}</div>
 }
 
 const Footer = () => {
