@@ -42,7 +42,7 @@ const Hero = () => {
 }
 
 const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
-  const { title, description, sections, links } = content
+  const { id, title, description, sections, links } = content
   const controls = useAnimationControls()
 
   const openDetail = () => {
@@ -56,8 +56,8 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
     })
   }
 
-  const summaryID = `summary-${title}`
-  const detailID = `detail-${title}`
+  const summaryID = `summary-${id}`
+  const detailID = `detail-${id}`
 
   return (
     <>
