@@ -92,8 +92,13 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
           <div className="space-y-8 w-full md:w-[900px]">
             <div className="">
               <div className="flex justify-end">
-                <Scroll to={summaryID} duration={1000} smooth>
-                  <button onClick={closeDetail} className="w-20 h-20">
+                <Scroll
+                  className="w-20 h-20"
+                  to={summaryID}
+                  duration={1000}
+                  smooth
+                >
+                  <button onClick={closeDetail}>
                     <Icon type="x" />
                   </button>
                 </Scroll>
