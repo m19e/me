@@ -1,4 +1,4 @@
-import type { SectionContent } from "types"
+import type { SectionContent } from "types/cms"
 
 interface Props {
   contents: SectionContent[]
