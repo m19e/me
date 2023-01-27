@@ -13,7 +13,7 @@ interface Props {
 
 export const Works = ({ contents }: Props) => {
   const works = contents.map((c, i) => (
-    <Work key={c.title} content={c} last={contents.length === i + 1} />
+    <Work key={c.id} content={c} last={contents.length === i + 1} />
   ))
 
   return (
