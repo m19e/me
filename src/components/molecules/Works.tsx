@@ -75,7 +75,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
               onClick={openDetail}
             >
               <div className="flex items-center px-10 h-full">
-                <p className="font-sans font-thin text-white">{title}</p>
+                <p className="font-rounded text-white">{title}</p>
               </div>
             </div>
           </Scroll>
