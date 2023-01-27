@@ -42,7 +42,7 @@ const Hero = () => {
 }
 
 const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
-  const { id, title, description, sections, links } = content
+  const { id, title, description, sections, links, images } = content
   const controls = useAnimationControls()
 
   const openDetail = () => {
@@ -58,20 +58,32 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
 
   const summaryID = `summary-${id}`
   const detailID = `detail-${id}`
+  const [firstImage, ...other] = images
+  const otherImages = other.map((img) => (
+    <div key={img.alt} className="relative w-full">
+      <Image
+        src={img.image.url}
+        alt={img.alt}
+        width={img.image.width}
+        height={img.image.height}
+      />
+    </div>
+  ))
 
   return (
     <>
       <div className="flex justify-center px-8 w-full md:px-auto">
-        <div className="aspect-[15/7] relative w-full md:w-[900px]">
+        <div className="relative w-full md:w-[900px]">
           <Image
-            layout="fill"
-            src="https://placehold.jp/900x420.png"
-            alt="mock"
+            src={firstImage.image.url}
+            alt={firstImage.alt}
+            width={firstImage.image.width}
+            height={firstImage.image.height}
           />
           <Scroll to={detailID} duration={last ? 1000 : 500} smooth>
             <div
               id={summaryID}
-              className="absolute inset-0 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300"
+              className="absolute inset-0 mb-1.5 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
               onClick={openDetail}
             >
               <div className="flex items-center px-10 h-full">
@@ -107,14 +119,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
                 {title}
               </h2>
             </div>
-            <div className="relative w-full">
-              <Image
-                src="https://placehold.jp/900x420.png"
-                alt="mock"
-                width={900}
-                height={420}
-              />
-            </div>
+            <div>{otherImages}</div>
             <div className="flex flex-col sm:flex-row">
               <h3 className="flex-1 font-rounded text-base whitespace-nowrap md:text-lg">
                 {description}
