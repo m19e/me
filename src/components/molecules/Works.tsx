@@ -116,7 +116,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
               />
             </div>
             <div className="flex flex-col sm:flex-row">
-              <h3 className="flex-1 font-latego text-base whitespace-nowrap md:text-lg">
+              <h3 className="flex-1 font-rounded text-base whitespace-nowrap md:text-lg">
                 {description}
               </h3>
               <Links links={links} />
