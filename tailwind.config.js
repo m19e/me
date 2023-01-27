@@ -5,6 +5,7 @@ module.exports = {
       fontFamily: {
         latego: ["GenEiLateGo"],
         koburi: ["GenEiKoburiMin"],
+        rounded: ["RoundedMPlus"],
       },
     },
   },
