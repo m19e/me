@@ -30,7 +30,7 @@ const Hero = () => {
     <div className="flex justify-center px-8 w-full md:px-auto">
       <div className="aspect-video flex flex-col justify-center w-full md:w-[900px]">
         <h1 className="space-y-4">
-          <span className="text-6xl font-thin font-latego">m19e.me</span>
+          <span className="font-latego text-6xl font-thin">m19e.me</span>
           <div className="flex flex-col px-1 text-xl italic font-thin leading-6">
             <span>PORTFOLIO OF m19e</span>
             <span>FRONTEND DEVELOPER</span>
@@ -114,7 +114,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
               />
             </div>
             <div className="flex flex-col sm:flex-row">
-              <h3 className="flex-1 text-base whitespace-nowrap md:text-lg font-latego">
+              <h3 className="flex-1 font-latego text-base whitespace-nowrap md:text-lg">
                 {description}
               </h3>
               <Links links={links} />
@@ -145,7 +145,7 @@ const Footer = () => {
   return (
     <footer className="flex items-center p-8 w-full footer text-base-content">
       <div className="flex flex-1 items-center">
-        <p className="text-base font-latego">©2023 m19e</p>
+        <p className="font-latego text-base">©2023 m19e</p>
       </div>
       <div className="flex gap-2">
         <a
