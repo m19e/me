@@ -103,7 +103,9 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
                   </button>
                 </Scroll>
               </div>
-              <h2 className="text-3xl italic font-thin">{title}</h2>
+              <h2 className="font-rounded text-3xl italic font-light">
+                {title}
+              </h2>
             </div>
             <div className="relative w-full">
               <Image
