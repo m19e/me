@@ -110,27 +110,27 @@
             "position": "before"
           },
           {
-            "pattern": "@/components/templates/**",
+            "pattern": "components/templates/**",
             "group": "internal",
             "position": "before"
           },
           {
-            "pattern": "@/components/organisms/**",
+            "pattern": "components/organisms/**",
             "group": "internal",
             "position": "before"
           },
           {
-            "pattern": "@/components/molecules/**",
+            "pattern": "components/molecules/**",
             "group": "internal",
             "position": "before"
           },
           {
-            "pattern": "@/components/atoms/**",
+            "pattern": "components/atoms/**",
             "group": "internal",
             "position": "before"
           },
           {
-            "pattern": "@/styles/**",
+            "pattern": "styles/**",
             "group": "index",
             "position": "before"
           }
