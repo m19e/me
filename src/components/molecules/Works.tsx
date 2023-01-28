@@ -4,16 +4,23 @@ import Image from "next/image"
 import { Link as Scroll } from "react-scroll"
 
 import type { WorkContent, LinkContent } from "types/cms"
+import type { DynamicImage } from "types/image"
 import { Icon } from "components/atoms/Icon"
 import { Sections } from "components/molecules/Sections"
 
 interface Props {
   contents: WorkContent[]
+  images: DynamicImage[][]
 }
 
-export const Works = ({ contents }: Props) => {
+export const Works = ({ contents, images }: Props) => {
   const works = contents.map((c, i) => (
-    <Work key={c.id} content={c} last={contents.length === i + 1} />
+    <Work
+      key={c.id}
+      content={c}
+      images={images[i]}
+      last={contents.length === i + 1}
+    />
   ))
 
   return (
@@ -41,8 +48,14 @@ const Hero = () => {
   )
 }
 
-const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
-  const { id, title, description, sections, links, images } = content
+interface WorkProps {
+  content: WorkContent
+  images: DynamicImage[]
+  last: boolean
+}
+
+const Work = ({ content, images, last }: WorkProps) => {
+  const { id, title, description, sections, links } = content
   const controls = useAnimationControls()
 
   const openDetail = () => {
@@ -58,28 +71,15 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
 
   const summaryID = `summary-${id}`
   const detailID = `detail-${id}`
-  const [firstImage, ...other] = images
-  const otherImages = other.map((img) => (
-    <div key={img.alt} className="relative w-full">
-      <Image
-        src={img.image.url}
-        alt={img.alt}
-        width={img.image.width}
-        height={img.image.height}
-      />
-    </div>
+  const [summaryImage, ...detailImages] = images.map(({ imageProps, alt }) => (
+    <Image key={imageProps.src} {...imageProps} alt={alt} placeholder="blur" />
   ))
 
   return (
     <>
       <div className="flex justify-center px-8 w-full md:px-auto">
         <div className="relative w-full md:w-[900px]">
-          <Image
-            src={firstImage.image.url}
-            alt={firstImage.alt}
-            width={firstImage.image.width}
-            height={firstImage.image.height}
-          />
+          {summaryImage}
           <Scroll to={detailID} duration={last ? 1000 : 500} smooth>
             <div
               id={summaryID}
@@ -119,7 +119,7 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
                 {title}
               </h2>
             </div>
-            <div>{otherImages}</div>
+            <div>{detailImages}</div>
             <div className="flex flex-col sm:flex-row">
               <h3 className="flex-1 font-rounded text-base whitespace-nowrap md:text-lg">
                 {description}
