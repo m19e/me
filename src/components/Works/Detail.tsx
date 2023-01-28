@@ -2,7 +2,6 @@ import { Link as Scroll } from "react-scroll"
 
 import type { WorkContent } from "types/cms"
 import type { DynamicImage } from "types/image"
-
 import { Sections } from "components/molecules/Sections"
 import { Icon } from "components/atoms/Icon"
 

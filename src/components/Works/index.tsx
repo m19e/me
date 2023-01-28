@@ -1,15 +1,12 @@
-/* eslint-disable tailwindcss/migration-from-tailwind-2 */
-import Image from "next/image"
-import { Link as Scroll } from "react-scroll"
 import { motion, useAnimationControls } from "framer-motion"
 
-import type { WorkContent, LinkContent } from "types/cms"
+import type { WorkContent } from "types/cms"
 import type { DynamicImage } from "types/image"
-import { Icon } from "components/atoms/Icon"
-import { Sections } from "components/molecules/Sections"
 
+import { Detail } from "./Detail"
 import { Footer } from "./Footer"
 import { Hero } from "./Hero"
+import { Summary } from "./Summary"
 
 interface Props {
   contents: WorkContent[]
@@ -35,14 +32,14 @@ export const Works = ({ contents, images }: Props) => {
   )
 }
 
-interface WorkProps {
+type WorkProps = {
   content: WorkContent
   images: DynamicImage[]
   last: boolean
 }
 
 const Work = ({ content, images, last }: WorkProps) => {
-  const { id, title, description, sections, links } = content
+  const { id, title } = content
   const controls = useAnimationControls()
 
   const openDetail = () => {
@@ -56,30 +53,18 @@ const Work = ({ content, images, last }: WorkProps) => {
     })
   }
 
-  const summaryID = `summary-${id}`
+  const [summaryImage, ...detailImages] = images
   const detailID = `detail-${id}`
-  const [summaryImage, ...detailImages] = images.map(({ imageProps, alt }) => (
-    <Image key={imageProps.src} {...imageProps} alt={alt} placeholder="blur" />
-  ))
 
   return (
     <>
-      <div className="flex justify-center px-8 w-full md:px-auto">
-        <div className="relative w-full md:w-[900px]">
-          {summaryImage}
-          <Scroll to={detailID} duration={last ? 1000 : 500} smooth>
-            <div
-              id={summaryID}
-              className="absolute inset-0 mb-1.5 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-              onClick={openDetail}
-            >
-              <div className="flex items-center px-10 h-full">
-                <p className="font-rounded text-white">{title}</p>
-              </div>
-            </div>
-          </Scroll>
-        </div>
-      </div>
+      <Summary
+        id={id}
+        title={title}
+        image={summaryImage}
+        onOpen={openDetail}
+        last={last}
+      />
 
       <motion.div
         id={detailID}
@@ -87,50 +72,8 @@ const Work = ({ content, images, last }: WorkProps) => {
         animate={controls}
         transition={{ duration: 1 }}
       >
-        <div className="flex justify-center px-8 pb-8 mb-8 w-full bg-zinc-50 md:px-auto">
-          <div className="space-y-8 w-full md:w-[900px]">
-            <div className="">
-              <div className="flex justify-end">
-                <Scroll
-                  className="w-20 h-20"
-                  to={summaryID}
-                  duration={1000}
-                  smooth
-                >
-                  <button onClick={closeDetail}>
-                    <Icon type="x" />
-                  </button>
-                </Scroll>
-              </div>
-              <h2 className="font-rounded text-3xl italic font-light">
-                {title}
-              </h2>
-            </div>
-            <div>{detailImages}</div>
-            <div className="flex flex-col sm:flex-row">
-              <h3 className="flex-1 font-rounded text-base whitespace-nowrap md:text-lg">
-                {description}
-              </h3>
-              <Links links={links} />
-            </div>
-            <Sections contents={sections} />
-          </div>
-        </div>
+        <Detail work={content} images={detailImages} onClose={closeDetail} />
       </motion.div>
     </>
   )
-}
-
-const Links = ({ links }: { links: LinkContent[] }) => {
-  const icons = links.map(({ icon, href }) => (
-    <a
-      key={href}
-      href={href}
-      className="w-6 h-6 hover:text-zinc-500 transition-colors"
-    >
-      <Icon type={icon[0]} />
-    </a>
-  ))
-
-  return <div className="flex gap-2 justify-end px-2">{icons}</div>
 }
