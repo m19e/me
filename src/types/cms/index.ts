@@ -1,3 +1,12 @@
+export type ImageContent = {
+  image: {
+    url: string
+    width: number
+    height: number
+  }
+  alt: string
+}
+
 export type SectionContent = {
   title: [string]
   text: string
@@ -14,6 +23,7 @@ export type WorkContent = {
   id: string
   title: string
   description: string
-  sections: SectionContent[]
+  images: ImageContent[]
   links: LinkContent[]
+  sections: SectionContent[]
 }

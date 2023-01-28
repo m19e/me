@@ -13,7 +13,7 @@ interface Props {
 
 export const Works = ({ contents }: Props) => {
   const works = contents.map((c, i) => (
-    <Work key={c.title} content={c} last={contents.length === i + 1} />
+    <Work key={c.id} content={c} last={contents.length === i + 1} />
   ))
 
   return (
@@ -29,9 +29,9 @@ const Hero = () => {
   return (
     <div className="flex justify-center px-8 w-full md:px-auto">
       <div className="aspect-video flex flex-col justify-center w-full md:w-[900px]">
-        <h1 className="space-y-4">
-          <span className="text-6xl font-thin font-latego">m19e.me</span>
-          <div className="flex flex-col px-1 text-xl italic font-thin leading-6">
+        <h1 className="space-y-4 font-rounded font-light">
+          <span className="text-6xl">m19e.me</span>
+          <div className="flex flex-col px-1 text-xl italic leading-6">
             <span>PORTFOLIO OF m19e</span>
             <span>FRONTEND DEVELOPER</span>
           </div>
@@ -42,7 +42,7 @@ const Hero = () => {
 }
 
 const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
-  const { id, title, description, sections, links } = content
+  const { id, title, description, sections, links, images } = content
   const controls = useAnimationControls()
 
   const openDetail = () => {
@@ -58,24 +58,36 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
 
   const summaryID = `summary-${id}`
   const detailID = `detail-${id}`
+  const [firstImage, ...other] = images
+  const otherImages = other.map((img) => (
+    <div key={img.alt} className="relative w-full">
+      <Image
+        src={img.image.url}
+        alt={img.alt}
+        width={img.image.width}
+        height={img.image.height}
+      />
+    </div>
+  ))
 
   return (
     <>
       <div className="flex justify-center px-8 w-full md:px-auto">
-        <div className="aspect-[15/7] relative w-full md:w-[900px]">
+        <div className="relative w-full md:w-[900px]">
           <Image
-            layout="fill"
-            src="https://placehold.jp/900x420.png"
-            alt="mock"
+            src={firstImage.image.url}
+            alt={firstImage.alt}
+            width={firstImage.image.width}
+            height={firstImage.image.height}
           />
           <Scroll to={detailID} duration={last ? 1000 : 500} smooth>
             <div
               id={summaryID}
-              className="absolute inset-0 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300"
+              className="absolute inset-0 mb-1.5 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
               onClick={openDetail}
             >
               <div className="flex items-center px-10 h-full">
-                <p className="font-sans font-thin text-white">{title}</p>
+                <p className="font-rounded text-white">{title}</p>
               </div>
             </div>
           </Scroll>
@@ -103,18 +115,13 @@ const Work = ({ content, last }: { content: WorkContent; last: boolean }) => {
                   </button>
                 </Scroll>
               </div>
-              <h2 className="text-3xl italic font-thin">{title}</h2>
+              <h2 className="font-rounded text-3xl italic font-light">
+                {title}
+              </h2>
             </div>
-            <div className="relative w-full">
-              <Image
-                src="https://placehold.jp/900x420.png"
-                alt="mock"
-                width={900}
-                height={420}
-              />
-            </div>
+            <div>{otherImages}</div>
             <div className="flex flex-col sm:flex-row">
-              <h3 className="flex-1 text-base whitespace-nowrap md:text-lg font-latego">
+              <h3 className="flex-1 font-rounded text-base whitespace-nowrap md:text-lg">
                 {description}
               </h3>
               <Links links={links} />
@@ -145,7 +152,7 @@ const Footer = () => {
   return (
     <footer className="flex items-center p-8 w-full footer text-base-content">
       <div className="flex flex-1 items-center">
-        <p className="text-base font-latego">©2023 m19e</p>
+        <p className="font-rounded text-base">©2023 m19e</p>
       </div>
       <div className="flex gap-2">
         <a
