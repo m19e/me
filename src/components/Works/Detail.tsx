@@ -18,9 +18,7 @@ export const Detail = ({ work, images, onClose }: Props) => {
   const { id, title, description, links, sections } = work
   const summaryID = `summary-${id}`
 
-  const detailImages = images.map((image) => (
-    <BlurImage key={image.alt} {...image} />
-  ))
+  const detailImages = images.map((img) => <BlurImage key={img.alt} {...img} />)
 
   return (
     <div className="flex justify-center px-8 pb-8 mb-8 w-full bg-zinc-50 md:px-auto">
