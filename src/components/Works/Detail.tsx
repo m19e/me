@@ -23,7 +23,7 @@ export const Detail = ({ work, images, onClose }: Props) => {
   return (
     <div className="flex justify-center px-8 pb-8 mb-8 w-full bg-zinc-50 md:px-auto">
       <div className="space-y-8 w-full md:w-[900px]">
-        <div className="">
+        <div>
           <div className="flex justify-end">
             <Scroll className="w-20 h-20" to={summaryID} duration={1000} smooth>
               <button onClick={onClose}>
