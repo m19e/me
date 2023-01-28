@@ -1,13 +1,14 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
-import { motion, useAnimationControls } from "framer-motion"
 import Image from "next/image"
 import { Link as Scroll } from "react-scroll"
+import { motion, useAnimationControls } from "framer-motion"
 
 import type { WorkContent, LinkContent } from "types/cms"
 import type { DynamicImage } from "types/image"
 import { Icon } from "components/atoms/Icon"
 import { Sections } from "components/molecules/Sections"
 
+import { Footer } from "./Footer"
 import { Hero } from "./Hero"
 
 interface Props {
@@ -132,24 +133,4 @@ const Links = ({ links }: { links: LinkContent[] }) => {
   ))
 
   return <div className="flex gap-2 justify-end px-2">{icons}</div>
-}
-
-const Footer = () => {
-  return (
-    <footer className="flex items-center p-8 w-full footer text-base-content">
-      <div className="flex flex-1 items-center">
-        <p className="font-rounded text-base">©2023 m19e</p>
-      </div>
-      <div className="flex gap-2">
-        <a
-          className="w-6 h-6"
-          href="https://github.com/m19e"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon type="github" />
-        </a>
-      </div>
-    </footer>
-  )
 }
