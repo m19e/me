@@ -11,6 +11,8 @@ export const Links = ({ links }: Props) => {
       key={href}
       href={href}
       className="w-6 h-6 hover:text-zinc-500 transition-colors"
+      target="_blank"
+      rel="noreferrer"
     >
       <Icon type={icon[0]} />
     </a>
