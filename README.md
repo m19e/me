@@ -3,7 +3,7 @@
 ## TODO
 
 - [ ] EATS
-  - [ ] README
+  - [x] README
   - [ ] CMS
   - [x] Publish
 - [ ] TMI
