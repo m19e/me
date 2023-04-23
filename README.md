@@ -11,7 +11,7 @@
   - [ ] CMS
   - [x] Publish
 - [ ] TMI
-  - [ ] README
+  - [x] README
   - [ ] CMS
   - [ ] Publish
 - [ ] KK
