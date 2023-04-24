@@ -34,10 +34,7 @@
   - [ ] README
   - [ ] CMS
   - [x] Publish
-- [ ] #シャニマスリプパ
-  - [ ] README
-  - [x] CMS
-  - [x] Publish
+- [x] #シャニマスリプパ
 - [x] Matrix Maker
 - [x] SSR2020 Tweets
 - [x] non-duplication-tweet
