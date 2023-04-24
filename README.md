@@ -2,12 +2,16 @@
 
 ## TODO
 
+- [ ] ブルアカ4コマ検索
+  - [x] README
+  - [ ] CMS
+  - [x] Publish
 - [ ] EATS
-  - [ ] README
+  - [x] README
   - [ ] CMS
   - [x] Publish
 - [ ] TMI
-  - [ ] README
+  - [x] README
   - [ ] CMS
   - [ ] Publish
 - [ ] KK
@@ -30,13 +34,7 @@
   - [ ] README
   - [ ] CMS
   - [x] Publish
-- [ ] #シャニマスリプパ
-  - [ ] README
-  - [x] CMS
-  - [x] Publish
-- [ ] Matrix Maker
-  - [ ] README
-  - [x] CMS
-  - [x] Publish
+- [x] #シャニマスリプパ
+- [x] Matrix Maker
 - [x] SSR2020 Tweets
 - [x] non-duplication-tweet

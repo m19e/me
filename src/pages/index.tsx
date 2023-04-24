@@ -25,7 +25,10 @@ const getPlaiceholerAll = async (work: WorkContent) =>
   )
 
 export const getStaticProps = async () => {
-  const { contents } = await Client.getList<WorkContent>({ endpoint: "works" })
+  const { contents } = await Client.getList<WorkContent>({
+    endpoint: "works",
+    queries: { limit: 50 },
+  })
 
   const images: DynamicImage[][] = await Promise.all(
     contents.map(getPlaiceholerAll)
