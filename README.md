@@ -38,9 +38,6 @@
   - [ ] README
   - [x] CMS
   - [x] Publish
-- [ ] Matrix Maker
-  - [ ] README
-  - [x] CMS
-  - [x] Publish
+- [x] Matrix Maker
 - [x] SSR2020 Tweets
 - [x] non-duplication-tweet
