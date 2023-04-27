@@ -26,10 +26,7 @@
   - [ ] README
   - [ ] CMS
   - [x] Publish
-- [ ] #emotwicon
-  - [ ] README
-  - [x] CMS
-  - [x] Publish
+- [x] #emotwicon
 - [x] Artifact Scorer
 - [x] #シャニマスリプパ
 - [x] Matrix Maker
