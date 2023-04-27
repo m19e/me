@@ -28,7 +28,7 @@
   - [x] Publish
 - [ ] #emotwicon
   - [ ] README
-  - [ ] CMS
+  - [x] CMS
   - [x] Publish
 - [x] Artifact Scorer
 - [x] #シャニマスリプパ
