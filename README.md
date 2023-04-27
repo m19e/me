@@ -30,10 +30,7 @@
   - [ ] README
   - [ ] CMS
   - [x] Publish
-- [ ] Artifact Scorer
-  - [ ] README
-  - [x] CMS
-  - [x] Publish
+- [x] Artifact Scorer
 - [x] #シャニマスリプパ
 - [x] Matrix Maker
 - [x] SSR2020 Tweets
