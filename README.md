@@ -32,7 +32,7 @@
   - [x] Publish
 - [ ] Artifact Scorer
   - [ ] README
-  - [ ] CMS
+  - [x] CMS
   - [x] Publish
 - [x] #シャニマスリプパ
 - [x] Matrix Maker
