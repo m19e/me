@@ -6,10 +6,7 @@
   - [x] README
   - [ ] CMS
   - [x] Publish
-- [ ] EATS
-  - [x] README
-  - [ ] CMS
-  - [x] Publish
+- [x] EATS
 - [ ] TMI
   - [x] README
   - [ ] CMS
