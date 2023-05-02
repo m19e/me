@@ -2,10 +2,7 @@
 
 ## TODO
 
-- [ ] ブルアカ4コマ検索
-  - [x] README
-  - [ ] CMS
-  - [x] Publish
+- [x] ブルアカ4コマ検索
 - [x] EATS
 - [ ] TMI
   - [x] README
