@@ -16,10 +16,7 @@
   - [ ] README
   - [ ] CMS
   - [x] Publish
-- [ ] Clara
-  - [ ] README
-  - [ ] CMS
-  - [x] Publish
+- [x] Clara
 - [x] #emotwicon
 - [x] Artifact Scorer
 - [x] #シャニマスリプパ
