@@ -8,13 +8,13 @@
   - [x] README
   - [ ] CMS
   - [ ] Publish
-- [ ] KK
+- [ ] KK (private)
   - [ ] README
   - [ ] CMS
   - [ ] Publish
 - [ ] !kaboom
   - [ ] README
-  - [ ] CMS
+  - [x] CMS
   - [x] Publish
 - [x] Clara
 - [ ] Clara Editor
