@@ -9,17 +9,17 @@
 - [ ] TMI
   - [x] README
   - [ ] CMS
-  - [ ] Publish
-- [ ] KK (private)
-  - [ ] README
-  - [ ] CMS
-  - [ ] Publish
+  - [ ] ~~Publish~~
 - [ ] !kaboom
   - [ ] README
   - [x] CMS
   - [x] Publish
 - [x] Clara
 - [ ] Clara Editor
+  - [ ] README
+  - [ ] CMS
+  - [ ] Publish
+- [ ] KK (private)
   - [ ] README
   - [ ] CMS
   - [ ] Publish
