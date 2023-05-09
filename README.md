@@ -14,7 +14,7 @@
 - [ ] ADDITION@L WING 02
   - [ ] README
   - [ ] CMS
-  - [ ] Publish
+  - [x] Publish
 - [x] #emotwicon
 - [x] Artifact Scorer
 - [x] #シャニマスリプパ
