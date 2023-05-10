@@ -12,7 +12,7 @@ export type SectionContent = {
   text: string
 }
 
-export type IconType = "github" | "link" | "download"
+export type IconType = "github" | "link" | "download" | "twitter"
 
 export type LinkContent = {
   icon: [IconType]
