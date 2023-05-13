@@ -9,8 +9,8 @@
 - [ ] Clara Editor
   - [ ] README
   - [ ] CMS
-  - [ ] Publish
-    - [ ] Release
+  - [x] Publish
+    - [x] Release
 - [x] Clara
 - [ ] ADDITION@L WING 02
   - [ ] README
