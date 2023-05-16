@@ -13,7 +13,7 @@
     - [x] Release
 - [x] Clara
 - [ ] ADDITION@L WING 02
-  - [ ] README
+  - [ ] ~~README~~
   - [ ] CMS
   - [x] Publish
 - [x] #emotwicon
