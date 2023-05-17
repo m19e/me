@@ -31,6 +31,3 @@
   - [x] CMS
   - [x] Publish
 - [ ] KK (private)
-  - [ ] README
-  - [ ] CMS
-  - [ ] Publish
