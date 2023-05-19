@@ -1,3 +1,4 @@
+import Head from "next/head"
 import { motion, useAnimationControls } from "framer-motion"
 
 import type { WorkContent } from "types/cms"
@@ -24,11 +25,16 @@ export const Works = ({ contents, images }: Props) => {
   ))
 
   return (
-    <div className="flex flex-col gap-4 items-center min-h-screen">
-      <Hero />
-      {works}
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>m19e/me</title>
+      </Head>
+      <div className="flex flex-col gap-4 items-center min-h-screen">
+        <Hero />
+        {works}
+        <Footer />
+      </div>
+    </>
   )
 }
 
