@@ -12,10 +12,7 @@
   - [x] Publish
     - [x] Release
 - [x] Clara
-- [ ] 友愛マージナル
-  - [ ] ~~README~~
-  - [x] CMS
-  - [x] Publish
+- [x] 友愛マージナル
 - [x] #emotwicon
 - [x] Artifact Scorer
 - [x] #シャニマスリプパ
