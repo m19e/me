@@ -7,7 +7,7 @@
 - [x] ブルアカ4コマ検索
 - [x] EATS
 - [ ] Clara Editor
-  - [ ] README
+  - [x] README
   - [ ] CMS
   - [x] Publish
     - [x] Release
