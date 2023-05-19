@@ -12,7 +12,7 @@
   - [x] Publish
     - [x] Release
 - [x] Clara
-- [ ] ADDITION@L WING 02
+- [ ] 友愛マージナル
   - [ ] ~~README~~
   - [ ] CMS
   - [x] Publish
