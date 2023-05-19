@@ -14,7 +14,7 @@
 - [x] Clara
 - [ ] 友愛マージナル
   - [ ] ~~README~~
-  - [ ] CMS
+  - [x] CMS
   - [x] Publish
 - [x] #emotwicon
 - [x] Artifact Scorer
