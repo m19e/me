@@ -6,11 +6,7 @@
 
 - [x] ブルアカ4コマ検索
 - [x] EATS
-- [ ] Clara Editor
-  - [x] README
-  - [x] CMS
-  - [x] Publish
-    - [x] Release
+- [x] Clara Editor
 - [x] Clara
 - [x] 友愛マージナル
 - [x] #emotwicon
