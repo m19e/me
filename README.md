@@ -8,7 +8,7 @@
 - [x] EATS
 - [ ] Clara Editor
   - [x] README
-  - [ ] CMS
+  - [x] CMS
   - [x] Publish
     - [x] Release
 - [x] Clara
