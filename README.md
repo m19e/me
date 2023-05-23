@@ -9,6 +9,10 @@
 - [x] Clara Editor
 - [x] Clara
 - [x] 友愛マージナル
+- [ ] m19e/me
+  - [ ] README
+  - [ ] CMS
+  - [x] Publish
 - [x] #emotwicon
 - [x] Artifact Scorer
 - [x] #シャニマスリプパ
