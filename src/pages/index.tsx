@@ -12,7 +12,7 @@ const Page: NextPage<Props> = (props) => {
   return <Works {...props} />
 }
 
-const getPlaiceholerAll = async (work: WorkContent) =>
+const getPlaiceholderAll = async (work: WorkContent) =>
   Promise.all(
     work.images.map(async ({ image, alt }) => {
       const { base64, img } = await getPlaiceholder(image.url)
@@ -31,7 +31,7 @@ export const getStaticProps = async () => {
   })
 
   const images: DynamicImage[][] = await Promise.all(
-    contents.map(getPlaiceholerAll)
+    contents.map(getPlaiceholderAll)
   )
 
   return {
